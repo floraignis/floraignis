@@ -24,24 +24,24 @@ export const darkLinks = [
     icon: 'onlyfans',
     title: 'OnlyFans',
     description: 'Exclusive content',
-    href: 'YOUR_ONLYFANS_URL',
+    href: 'https://onlyfans.com/floraignis',
   },
   {
     icon: 'fansly',
     title: 'Fansly',
     description: 'Wet & Wild 💦',
-    href: 'YOUR_FANSLY_URL',
+    href: 'https://fansly.com/FloraIgnis',
   },
   {
     icon: 'reddit',
     title: 'Reddit',
     description: 'Real-life blog 🌶️',
-    href: 'YOUR_REDDIT_URL',
+    href: 'https://www.reddit.com/user/FloraIgnis',
   },
-  {
-    icon: 'manyvids',
-    title: 'ManyVids',
-    description: 'For something special ✨',
-    href: 'YOUR_MANYVIDS_URL',
-  },
+  // {
+  //   icon: 'manyvids',
+  //   title: 'ManyVids',
+  //   description: 'For something special ✨',
+  //   href: 'YOUR_MANYVIDS_URL',
+  // },
 ]
