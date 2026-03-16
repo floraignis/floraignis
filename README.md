@@ -23,7 +23,7 @@ I combine a rigorous technical background with a modern stack to ensure software
 
 | Category | Tools & Technologies |
 |---|---|
-| **Testing** | Manual QA · Test Documentation · SQL · Chrome DevTools |
+| **Testing** | Manual QA · Test Automation · Test Documentation · SQL · Chrome DevTools |
 | **Frontend** | React · TypeScript |
 | **Backend** | Kotlin |
 | **Methodologies** | System Analysis · Root Cause Analysis · Agile |
