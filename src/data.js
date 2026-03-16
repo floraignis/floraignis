@@ -19,6 +19,15 @@ export const brightLinks = [
   },
 ]
 
+export const proLinks = [
+  {
+    icon: 'github',
+    title: 'GitHub',
+    description: 'My projects & code',
+    href: 'https://github.com/floraignis',
+  },
+]
+
 export const darkLinks = [
   {
     icon: 'onlyfans',

@@ -5,7 +5,7 @@ import Background from './components/Background'
 import ProfileCard from './components/ProfileCard'
 import LinkButton from './components/LinkButton'
 import AgeGate from './components/AgeGate'
-import { brightLinks, darkLinks } from './data'
+import { brightLinks, darkLinks, proLinks } from './data'
 import { backgroundImages } from './backgrounds'
 
 function SectionLabel({ emoji, label, animationDelay }) {
@@ -152,6 +152,13 @@ export default function App() {
               onRestrictedClick={handleRestrictedClick}
               animationDelay={460 + i * 70}
             />
+          ))}
+        </Box>
+
+        <Box sx={{ width: '100%', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+          <SectionLabel emoji="💼" label="My Professional Side" animationDelay={740} />
+          {proLinks.map((link, i) => (
+            <LinkButton key={link.title} {...link} animationDelay={780 + i * 70} />
           ))}
         </Box>
 
