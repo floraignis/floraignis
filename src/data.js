@@ -12,10 +12,10 @@ export const brightLinks = [
     href: 'https://t.me/+s8IYFPPrq4E5Yzk0',
   },
   {
-    icon: 'suno',
-    title: 'Suno',
+    icon: 'spotify',
+    title: 'Spotify',
     description: 'My everyday music 🎧',
-    href: 'https://suno.com/@floraignis',
+    href: 'https://open.spotify.com/artist/4gwLZFM9ghwR6zo7gOnPOl?si=hXb-mFuISciPpa2B4qXBcg',
   },
 ]
 
