@@ -87,7 +87,7 @@ export default function ProfileCard() {
           maxWidth: '320px',
         }}
       >
-        35 yo ginger mom of three, exploring herself and looking for new friends 😊
+        36 yo ginger mom of three, exploring herself and looking for new friends 😊
       </Typography>
     </Box>
   )
