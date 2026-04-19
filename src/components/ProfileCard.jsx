@@ -87,7 +87,16 @@ export default function ProfileCard() {
           maxWidth: '320px',
         }}
       >
-        36 yo ginger mom of three, exploring herself and looking for new friends 😊
+        Red hair, engineering heart.<br />
+        <br />
+        By day: three kids, a garden, and the quiet rhythm of home.<br />
+        By night: spicy narratives, new connections, and moderating
+        a Reddit community of nearly a million people.<br />
+        <br />
+        Embroidery needle in one hand, bug report in the other -
+        aspiring Software Tester.<br />
+        <br />
+        Always open to new connections.
       </Typography>
     </Box>
   )

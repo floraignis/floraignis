@@ -7,6 +7,7 @@ import LinkButton from './components/LinkButton'
 import AgeGate from './components/AgeGate'
 import { brightLinks, darkLinks, proLinks } from './data'
 import { backgroundImages } from './backgrounds'
+import avatarSrc from './assets/avatar/MVIMG_20250916_091817_Original.JPG'
 
 function SectionLabel({ emoji, label, animationDelay }) {
   return (
@@ -56,7 +57,7 @@ function SectionLabel({ emoji, label, animationDelay }) {
 
 export default function App() {
   const [ageGate, setAgeGate] = useState({ open: false, url: '', name: '' })
-  const [bgIndex, setBgIndex] = useState(import.meta.env.DEV ? 0 : 1)
+  const [bgIndex, setBgIndex] = useState(0)
 
   const currentBg = bgIndex === 0 ? null : backgroundImages[bgIndex - 1]
 
@@ -116,9 +117,204 @@ export default function App() {
         </Tooltip>
       )}
 
+      <Box sx={{ display: { xs: 'none', md: 'block' }, position: 'relative', zIndex: 1 }}>
+        <Box
+          sx={{
+            display: 'grid',
+            gridTemplateColumns: '1fr 1fr',
+            height: '100vh',
+            minHeight: '600px',
+          }}
+        >
+          <Box
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
+              px: { md: 6, lg: 10 },
+              gap: '28px',
+            }}
+          >
+            <Box>
+              <Typography
+                component="p"
+                sx={{
+                  fontFamily: "'Inter', sans-serif",
+                  fontSize: '13px',
+                  fontWeight: 400,
+                  letterSpacing: '3px',
+                  textTransform: 'uppercase',
+                  color: 'rgba(212, 148, 26, 0.7)',
+                  mb: '14px',
+                }}
+              >
+                hello, I'm
+              </Typography>
+              <Typography
+                component="h1"
+                sx={{
+                  fontFamily: "'Playfair Display', serif",
+                  fontSize: { md: '52px', lg: '68px' },
+                  fontWeight: 700,
+                  background: 'linear-gradient(135deg, #f0b840 0%, #d4941a 40%, #e8a020 100%)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                  lineHeight: 1.1,
+                  letterSpacing: '-1px',
+                }}
+              >
+                Flora Ignis
+              </Typography>
+            </Box>
+
+            <Typography
+              sx={{
+                fontFamily: "'Inter', sans-serif",
+                fontSize: { md: '15px', lg: '16px' },
+                fontWeight: 300,
+                color: 'rgba(250, 235, 215, 0.75)',
+                lineHeight: 1.8,
+                maxWidth: '440px',
+              }}
+            >
+              Red hair, engineering heart.<br />
+              <br />
+              By day, I cultivate life: raising three children, tending to my garden,
+              and finding peace in the quiet rhythm of home.<br />
+              <br />
+              By night, I craft worlds: writing spicy narratives, flirting, and meeting
+              new people - both online and off. I also manage the digital chaos of a
+              Reddit community of nearly a million people.<br />
+              <br />
+              I find beauty in the precision of an embroidery needle, as well as the cold
+              logic of a line of code. Currently, I'm bringing my engineering mindset into
+              the world of IT and Software Testing, where I hunt for bugs with the same
+              patience I use to grow my garden.<br />
+              <br />
+              Always open to new connections.
+            </Typography>
+
+            <Box
+              sx={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '10px',
+                mt: '8px',
+              }}
+            >
+              <Box
+                sx={{
+                  width: '32px',
+                  height: '1px',
+                  background: 'rgba(212, 148, 26, 0.4)',
+                }}
+              />
+              <Typography
+                sx={{
+                  fontFamily: "'Inter', sans-serif",
+                  fontSize: '11px',
+                  fontWeight: 400,
+                  letterSpacing: '2px',
+                  textTransform: 'uppercase',
+                  color: 'rgba(212, 148, 26, 0.45)',
+                }}
+              >
+                scroll to links
+              </Typography>
+            </Box>
+          </Box>
+
+          <Box
+            sx={{
+              position: 'relative',
+              overflow: 'hidden',
+            }}
+          >
+            <Box
+              sx={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '120px',
+                height: '100%',
+                background: 'linear-gradient(90deg, rgba(13, 7, 3, 1) 0%, transparent 100%)',
+                zIndex: 1,
+              }}
+            />
+            <Box
+              component="img"
+              src={avatarSrc}
+              alt="Flora Ignis"
+              sx={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                objectPosition: 'center top',
+                display: 'block',
+                opacity: 0.85,
+              }}
+            />
+          </Box>
+        </Box>
+
+        <Box
+          sx={{
+            px: { md: 6, lg: 10 },
+            py: '72px',
+            display: 'grid',
+            gridTemplateColumns: '1fr 1fr 1fr',
+            gap: '40px',
+          }}
+        >
+          <Box sx={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+            <SectionLabel emoji="☀️" label="My Bright Side" animationDelay={0} />
+            {brightLinks.map((link, i) => (
+              <LinkButton key={link.title} {...link} animationDelay={40 + i * 70} />
+            ))}
+          </Box>
+
+          <Box sx={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+            <SectionLabel emoji="🌙" label="My Dark Side · 18+" animationDelay={0} />
+            {darkLinks.map((link, i) => (
+              <LinkButton
+                key={link.title}
+                {...link}
+                restricted
+                onRestrictedClick={handleRestrictedClick}
+                animationDelay={40 + i * 70}
+              />
+            ))}
+          </Box>
+
+          <Box sx={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+            <SectionLabel emoji="💼" label="My Professional Side" animationDelay={0} />
+            {proLinks.map((link, i) => (
+              <LinkButton key={link.title} {...link} animationDelay={40 + i * 70} />
+            ))}
+          </Box>
+        </Box>
+
+        <Typography
+          component="footer"
+          sx={{
+            fontFamily: "'Inter', sans-serif",
+            fontSize: '12px',
+            fontWeight: 300,
+            color: 'rgba(250, 235, 215, 0.2)',
+            letterSpacing: '0.5px',
+            textAlign: 'center',
+            pb: '32px',
+          }}
+        >
+          © 2026 Flora Ignis
+        </Typography>
+      </Box>
+
       <Box
         component="main"
         sx={{
+          display: { xs: 'flex', md: 'none' },
           position: 'relative',
           zIndex: 1,
           maxWidth: '520px',
@@ -126,7 +322,6 @@ export default function App() {
           px: '16px',
           pt: '40px',
           pb: '64px',
-          display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
           gap: '24px',
